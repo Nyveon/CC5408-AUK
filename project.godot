@@ -16,8 +16,9 @@ _global_script_class_icons={
 [application]
 
 config/name="Auk"
-config/icon="res://icon.png"
+run/main_scene="res://scenes/Menu Principal.tscn"
+config/icon="res://sprites/icon.png"
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://fonts/steamwreck/default_env.tres"
