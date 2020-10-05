@@ -1,15 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/MovingPlatform.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Main.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 134.894, 33.5475 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 139.622, 36.5911 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 58.1423, 15.4905 )
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 93.8568, 207.841 )
@@ -22,14 +27,17 @@ position = Vector2( -0.0418701, -1.03415 )
 shape = SubResource( 1 )
 
 [node name="Floor2" type="StaticBody2D" parent="."]
-position = Vector2( 861.682, 287.394 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
-position = Vector2( -0.0418701, -1.03415 )
-shape = SubResource( 1 )
+position = Vector2( 860, 300 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="MovingPlatform" type="StaticBody2D" parent="."]
 position = Vector2( 529.399, 288.471 )
+input_pickable = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -37,3 +45,4 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform"]
 shape = SubResource( 2 )
+[connection signal="mouse_entered" from="MovingPlatform" to="MovingPlatform" method="_on_MovingPlatform_mouse_entered"]
