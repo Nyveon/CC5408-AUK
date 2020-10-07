@@ -37,10 +37,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="MovingPlatform" type="StaticBody2D" parent="."]
+[node name="MovingPlatform" type="KinematicBody2D" parent="."]
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 529.399, 288.471 )
 input_pickable = true
+motion/sync_to_physics = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
