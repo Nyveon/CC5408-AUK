@@ -11,6 +11,6 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(delta): 
 	if selected_node != null and Input.get_action_strength("dar_tiempo"):
 		selected_node.t += 1 # hay que linkear a click izq/der

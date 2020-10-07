@@ -12,12 +12,14 @@ var linear_vel = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_node("VisibilityNotifier2D").connect("screen_exited", self, "_on_screen_exited")
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	
+	# Movimiento
 	var target_vel = Input.get_action_strength("move_right") -\
 					 Input.get_action_strength("move_left")
 	
@@ -29,3 +31,6 @@ func _physics_process(delta):
 	
 	linear_vel = move_and_slide(linear_vel, Vector2.UP)
 	
+func _on_screen_exited():
+	print("aaa")
+	get_tree().reload_current_scene()	# Hay otro modo de restart que es potencialmente mejor, quizas cambiar.
