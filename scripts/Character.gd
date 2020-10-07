@@ -31,6 +31,10 @@ func _physics_process(delta):
 	
 	linear_vel = move_and_slide(linear_vel, Vector2.UP)
 	
+# Funcion de muerte. Llamar cuando el jugador muera
+func _death():
+	get_tree().reload_current_scene()
+	
+# Muerte al salir de la pantalla
 func _on_screen_exited():
-	print("aaa")
-	get_tree().reload_current_scene()	# Hay otro modo de restart que es potencialmente mejor, quizas cambiar.
+	_death()
