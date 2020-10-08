@@ -7,7 +7,7 @@ var init_pos = self.position
 
 # movimiento ida y vuelta
 func movement_x(t):
-	return 130*cos(t/75.0)
+	return 135*cos(t/75.0)
 
 # sin movimiento
 func movement_y(t):
