@@ -22,6 +22,6 @@ func _physics_process(delta):
 		if Input.get_action_strength("dar_tiempo") and tiempo>0:
 			selected_node.t += crono_power # hay que linkear a click izq/der
 			set_tiempo(tiempo-0.25)
-		elif Input.get_action_strength("quitar_tiempo") and tiempo>=0:
+		elif Input.get_action_strength("quitar_tiempo") and tiempo>=0 and tiempo<100:
 			selected_node.t -= crono_power
 			set_tiempo(tiempo+0.25)
