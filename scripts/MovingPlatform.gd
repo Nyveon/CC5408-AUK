@@ -5,6 +5,7 @@ extends KinematicBody2D
 var t = 0
 var init_pos = self.position
 
+
 # movimiento ida y vuelta
 func movement_x(t):
 	return 135*cos(t/75.0)
@@ -20,7 +21,7 @@ func ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	self.position = init_pos + Vector2(movement_x(t), movement_y(t))
-
+		
 # dile al Main que este es el nodo seleccionado
 func _on_MovingPlatform_mouse_entered():
 	get_node("../../Main").selected_node = self

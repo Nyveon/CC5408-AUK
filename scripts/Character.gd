@@ -7,6 +7,7 @@ var speed_y = 700
 var friction = 0.2
 var gravity = 60
 
+
 var linear_vel = Vector2()
 
 
