@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/MovingPlatform.gd" type="Script" id=2]
 [ext_resource path="res://scripts/Main.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Spikes.gd" type="Script" id=4]
+[ext_resource path="res://sprites/spike B.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 134.894, 33.5475 )
@@ -15,6 +17,9 @@ extents = Vector2( 58.1423, 15.4905 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.14902, 0.364706, 0.462745, 1 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 23.273, 14.0425 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -65,4 +70,18 @@ value = 100.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Spikes" type="Area2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes"]
+visible = false
+position = Vector2( 862.478, 248.975 )
+shape = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="Spikes"]
+position = Vector2( 862.866, 249.183 )
+scale = Vector2( 0.25584, 0.148118 )
+texture = ExtResource( 5 )
 [connection signal="mouse_entered" from="MovingPlatform" to="MovingPlatform" method="_on_MovingPlatform_mouse_entered"]
+[connection signal="body_entered" from="Spikes" to="Spikes" method="_on_Spikes_body_entered"]
