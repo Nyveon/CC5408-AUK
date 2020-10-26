@@ -13,6 +13,7 @@ var linear_vel = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Signal de cuando sale del nivel.
 	get_node("VisibilityNotifier2D").connect("screen_exited", self, "_on_screen_exited")
 	pass # Replace with function body.
 
@@ -33,9 +34,9 @@ func _physics_process(delta):
 	linear_vel = move_and_slide(linear_vel, Vector2.UP)
 	
 # Funcion de muerte. Llamar cuando el jugador muera
-func _death():
+func death():
 	get_tree().reload_current_scene()
 	
 # Muerte al salir de la pantalla
 func _on_screen_exited():
-	_death()
+	death()

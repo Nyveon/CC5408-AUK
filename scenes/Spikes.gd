@@ -17,5 +17,6 @@ func _ready():
 
 
 func _on_Spikes_body_entered(body):
-	get_tree().reload_current_scene()
+	get_parent().get_node("Character").death()
+	#get_tree().reload_current_scene()
 	pass # Replace with function body.
