@@ -17,6 +17,6 @@ func _ready():
 
 
 func _on_Spikes_body_entered(body):
-	get_parent().get_node("Character").death()
-	#get_tree().reload_current_scene()
-	pass # Replace with function body.
+	if (body.get_name() == "Character"): # Cambie esto a que solo sea cuando toque el jugador, si no se crasheaba infinitamente al tocar un elemento del nivel
+		get_parent().get_node("Character").death()
+

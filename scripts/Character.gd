@@ -2,10 +2,13 @@ extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
-var speed_x = 400
-var speed_y = 700
+var speed_x = 180
+var speed_y = 300
 var friction = 0.2
-var gravity = 60
+var gravity = 20
+var state_grounded = true  # Si el jugador esta en el piso o no
+
+
 
 
 var linear_vel = Vector2()
@@ -21,17 +24,42 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	
-	# Movimiento
+	# Movimiento horizontal
 	var target_vel = Input.get_action_strength("move_right") -\
 					 Input.get_action_strength("move_left")
-	
 	linear_vel.x = lerp(linear_vel.x, target_vel * speed_x, friction)
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		linear_vel.y -= speed_y
+	# Salto
+	if is_on_floor():
+		state_grounded = true
+		if Input.is_action_just_pressed("jump"):
+			linear_vel.y -= speed_y
+	else:
+		state_grounded = false
+		
 	linear_vel.y += gravity
 	
 	linear_vel = move_and_slide(linear_vel, Vector2.UP)
+	
+	# Estado de animacion (perdon por no usar el arbol de animaciones Elias T_T)
+	if state_grounded: # Animacion de correr/Idle
+		if target_vel != 0:
+			$AnimatedSprite.play("Run")
+		else:
+			$AnimatedSprite.play("Idle")
+	else: # Animacion de subida/caida
+		if linear_vel.y > 0:
+			$AnimatedSprite.play("Jump")
+		if linear_vel.y < 0:
+			$AnimatedSprite.play("Fall")
+	# Flip horizontal en direccion de movimiento
+	if linear_vel.x > 0:
+		$AnimatedSprite.flip_h = false
+	elif linear_vel.x < 0:
+		$AnimatedSprite.flip_h = true
+		
+	
+	
 	
 # Funcion de muerte. Llamar cuando el jugador muera
 func death():
