@@ -124,7 +124,7 @@ position = Vector2( -0.203217, -0.140839 )
 scale = Vector2( 0.747469, 0.722666 )
 frames = SubResource( 21 )
 animation = "Run"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -135,4 +135,6 @@ shape = SubResource( 22 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+limit_left = 0
+limit_top = 0
 smoothing_speed = 10.0
