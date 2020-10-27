@@ -19,6 +19,10 @@ config/name="Auk"
 run/main_scene="res://scenes/Niveles/Menu Principal.tscn"
 config/icon="res://logo.png"
 
+[autoload]
+
+Manager="*res://scripts/Manager.gd"
+
 [display]
 
 window/size/width=400
