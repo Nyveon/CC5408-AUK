@@ -14,6 +14,9 @@
 [ext_resource path="res://sprites/boiler.png" type="Texture" id=12]
 [ext_resource path="res://scripts/Estatico.gd" type="Script" id=13]
 
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 16, 32 )
+
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.14902, 0.364706, 0.462745, 1 )
 
@@ -470,14 +473,23 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=51]
-extents = Vector2( 16, 32 )
-
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="Estatico" type="KinematicBody2D" parent="."]
+input_pickable = true
+script = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="Estatico"]
+position = Vector2( 640, 128 )
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Estatico"]
+position = Vector2( 640, 128 )
+shape = SubResource( 51 )
+
 [node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 72, 152 )
+position = Vector2( 576, 160 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 2 )]
 
@@ -526,55 +538,74 @@ scroll_base_scale = Vector2( 0.5, 0.5 )
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 motion_scale = Vector2( 0, 0 )
 motion_mirroring = Vector2( 540, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer5"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 motion_scale = Vector2( 0.2, 0.2 )
 motion_mirroring = Vector2( 540, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 9 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 motion_scale = Vector2( 0.3, 0.3 )
 motion_mirroring = Vector2( 540, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer2"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 11 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 motion_scale = Vector2( 0.4, 0.4 )
 motion_mirroring = Vector2( 540, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer3"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 motion_scale = Vector2( 0.5, 0.5 )
 motion_mirroring = Vector2( 1024, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer4"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 centered = false
-
-[node name="Estatico" type="KinematicBody2D" parent="."]
-script = ExtResource( 13 )
-
-[node name="Sprite" type="Sprite" parent="Estatico"]
-position = Vector2( 640, 128 )
-texture = ExtResource( 12 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Estatico"]
-position = Vector2( 640, 128 )
-shape = SubResource( 51 )
+__meta__ = {
+"_edit_lock_": true
+}
