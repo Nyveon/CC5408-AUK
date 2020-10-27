@@ -24,5 +24,5 @@ func _physics_process(delta):
 		
 # dile al Main que este es el nodo seleccionado
 func _on_Estatico_mouse_entered():
-	print("aaaa")
+	print("bbb")
 	get_node("../../Main").selected_node = self

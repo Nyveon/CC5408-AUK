@@ -24,4 +24,5 @@ func _physics_process(delta):
 		
 # dile al Main que este es el nodo seleccionado
 func _on_MovingPlatform_mouse_entered():
+	print("aaa")
 	get_node("../../Main").selected_node = self

@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Auk"
-run/main_scene="res://scenes/Menu Principal.tscn"
+run/main_scene="res://scenes/Niveles/Menu Principal.tscn"
 config/icon="res://logo.png"
 
 [display]
