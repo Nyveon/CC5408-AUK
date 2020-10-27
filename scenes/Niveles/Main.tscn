@@ -479,9 +479,6 @@ script = ExtResource( 3 )
 [node name="MovingPlatform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 440, 192 )
 
-[node name="MovingPlatform2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 512, 96 )
-
 [node name="Spikes" parent="." instance=ExtResource( 4 )]
 position = Vector2( -520, 24 )
 

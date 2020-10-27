@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gear_rev.wav-16774e711523f54c1491f898056abaaa.sample"
+
+[deps]
+
+source_file="res://sounds/gear_rev.wav"
+dest_files=[ "res://.import/gear_rev.wav-16774e711523f54c1491f898056abaaa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
