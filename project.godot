@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "Chronomancy",
+"language": "GDScript",
+"path": "res://Chronomancy.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "ChronomancyBody2D",
+"language": "GDScript",
+"path": "res://scripts/ChronomancyBody2D.gd"
+} ]
 _global_script_class_icons={
-
+"Chronomancy": "res://sprites/Timer.svg",
+"ChronomancyBody2D": ""
 }
 
 [application]

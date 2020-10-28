@@ -18,5 +18,5 @@ func _ready():
 
 func _on_Spikes_body_entered(body):
 	if (body.get_name() == "Character"): # Cambie esto a que solo sea cuando toque el jugador, si no se crasheaba infinitamente al tocar un elemento del nivel
-		get_parent().get_node("Character").death()
+		get_parent().get_node("Character").death() # Cambiar esto a que llame de arriba hacia abajo (root->player)
 

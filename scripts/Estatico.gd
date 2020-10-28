@@ -1,27 +1,19 @@
 extends KinematicBody2D
 
 
-# Declare member variables here. Examples:
-var t = 0
-var init_pos = self.position
+# set_t esta ausente porque no hace nada esta caldera xd
 
-
-# movimiento ida y vuelta
-func movement_x(t):
-	return 0
-
-# sin movimiento
-func movement_y(t):
-	return 0
-
-# Called when the node enters the scene tree for the first time.
+# Inicio
 func _ready():
-	connect("mouse_entered", self, "_on_mouse_entered")  # Señale de mouse
+	
+	# Usar componente de Chronomancy
+	$Chronomancy.connect("time_changed", self, "set_t")
+	connect("mouse_entered", self, "_on_mouse_entered")
+	connect("mouse_exited", self, "_on_mouse_exited")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	self.position = init_pos + Vector2(movement_x(t), movement_y(t))
-		
-# dile al Main que este es el nodo seleccionado
+
+# To be selecionado, o no seleccionado
 func _on_mouse_entered():
-	Manager.selected_node = self
+	$Chronomancy.mouse_entered()
+func _on_mouse_exited():
+	$Chronomancy.mouse_exited()

@@ -4,30 +4,26 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 var speed_x = 180
 var speed_y = 300
-var friction = 0.2
-var gravity = 20
+var FRICTION = 0.2
+var GRAVITY = 20
 var state_grounded = true  # Si el jugador esta en el piso o no
-
-
-
-
 var linear_vel = Vector2()
 
 
-# Called when the node enters the scene tree for the first time.
+# Start
 func _ready():
 	# Signal de cuando sale del nivel.
 	get_node("VisibilityNotifier2D").connect("screen_exited", self, "_on_screen_exited")
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Step
 func _physics_process(delta):
 	
 	# Movimiento horizontal
 	var target_vel = Input.get_action_strength("move_right") -\
 					 Input.get_action_strength("move_left")
-	linear_vel.x = lerp(linear_vel.x, target_vel * speed_x, friction)
+	linear_vel.x = lerp(linear_vel.x, target_vel * speed_x, FRICTION)
 	
 	# Salto
 	if is_on_floor():
@@ -37,7 +33,7 @@ func _physics_process(delta):
 	else:
 		state_grounded = false
 		
-	linear_vel.y += gravity
+	linear_vel.y += GRAVITY
 	
 	linear_vel = move_and_slide(linear_vel, Vector2.UP)
 	
@@ -57,14 +53,9 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = false
 	elif linear_vel.x < 0:
 		$AnimatedSprite.flip_h = true
-		
-	
-	
-	
-# Funcion de muerte. Llamar cuando el jugador muera
+
+
+# Metodo de muerte. Llamar cuando el jugador muera
 func death():
 	get_tree().reload_current_scene()
 	
-# Muerte al salir de la pantalla
-func _on_screen_exited():
-	death()

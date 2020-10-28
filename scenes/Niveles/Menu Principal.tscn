@@ -28,43 +28,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="Panel"]
-anchor_top = 0.103
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 78.28
-margin_right = 1.0
-margin_bottom = -3.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CenterContainer"]
-margin_left = 164.0
-margin_right = 236.0
-margin_bottom = 134.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.503689
+anchor_top = 0.983532
+anchor_right = 0.503689
+anchor_bottom = 0.983532
+margin_left = -66.0
+margin_top = -140.0
+margin_right = 66.0
+margin_bottom = -6.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Start" type="Button" parent="Panel/CenterContainer/VBoxContainer"]
-margin_right = 72.0
+[node name="Start" type="Button" parent="Panel/VBoxContainer"]
+margin_right = 132.0
 margin_bottom = 42.0
 custom_fonts/font = SubResource( 2 )
 text = "Empezar"
 
-[node name="Creditos" type="Button" parent="Panel/CenterContainer/VBoxContainer"]
+[node name="Creditos" type="Button" parent="Panel/VBoxContainer"]
 margin_top = 46.0
-margin_right = 72.0
+margin_right = 132.0
 margin_bottom = 88.0
 custom_fonts/font = SubResource( 2 )
-text = "Creditos"
+text = "Créditos"
 
-[node name="Exit" type="Button" parent="Panel/CenterContainer/VBoxContainer"]
+[node name="Exit" type="Button" parent="Panel/VBoxContainer"]
 margin_top = 92.0
-margin_right = 72.0
+margin_right = 132.0
 margin_bottom = 134.0
 custom_fonts/font = SubResource( 2 )
 text = "Salir"

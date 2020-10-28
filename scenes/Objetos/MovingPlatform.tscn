@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprites/plataforma.png" type="Texture" id=1]
 [ext_resource path="res://scripts/MovingPlatform.gd" type="Script" id=2]
 [ext_resource path="res://sprites/engranaje.png" type="Texture" id=3]
 [ext_resource path="res://sounds/gear.wav" type="AudioStream" id=4]
+[ext_resource path="res://Chronomancy.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33.101, 8 )
@@ -29,3 +30,6 @@ stream = ExtResource( 4 )
 
 [node name="SonidoReversa" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Chronomancy" type="Node" parent="."]
+script = ExtResource( 5 )
