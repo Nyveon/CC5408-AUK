@@ -42,7 +42,7 @@ func _physics_process(delta):
 	if selected or moving:
 		moving = is_pressed # Si algo esta apretado, se esta moviendo en el tiempo
 		self.t += time_direction * Manager.crono_power  # Self porque es un setter (!)
-		Manager.time -= time_direction # Cambiar recurso en jugador
+		Manager.time -= 0.2*time_direction # Cambiar recurso en jugador
 
 
 # Seleccionado, o no seleccionado
