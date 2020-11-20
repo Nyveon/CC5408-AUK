@@ -11,6 +11,7 @@ var selected = false		# Si el mouse esta en el objeto
 var time_direction = 0		# Direccion en el tiempo que se mueve
 var moving = false			# Si el objeto se mueve en el tiempo ahora
 signal time_changed(value)	# Señal que indica un delta t
+onready var shader_outline = preload("res://shaders/outline.tres") # Shader de outline
 
 
 # set_t Default
@@ -40,9 +41,12 @@ func _physics_process(delta):
 	# Si esta seleccionado o moviendose
 	# (Piensen en moviendose como un toggle de seleccionado, que solo se desactiva al parar de poner una tecla)
 	if selected or moving:
+		get_parent().set_material(shader_outline)
 		moving = is_pressed # Si algo esta apretado, se esta moviendo en el tiempo
 		self.t += time_direction * Manager.crono_power  # Self porque es un setter (!)
 		Manager.time -= 0.2*time_direction # Cambiar recurso en jugador
+	else:
+		get_parent().set_material(null)
 
 
 # Seleccionado, o no seleccionado

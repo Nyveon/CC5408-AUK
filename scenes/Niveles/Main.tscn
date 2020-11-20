@@ -462,10 +462,10 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 0/z_index = 0
 
-[sub_resource type="StyleBoxFlat" id=50]
+[sub_resource type="StyleBoxFlat" id=49]
 bg_color = Color( 0.14902, 0.364706, 0.462745, 1 )
 
-[sub_resource type="DynamicFont" id=51]
+[sub_resource type="DynamicFont" id=50]
 size = 12
 font_data = ExtResource( 8 )
 
@@ -511,8 +511,8 @@ margin_left = 7.0
 margin_top = 6.0
 margin_right = 133.0
 margin_bottom = 22.0
-custom_styles/fg = SubResource( 50 )
-custom_fonts/font = SubResource( 51 )
+custom_styles/fg = SubResource( 49 )
+custom_fonts/font = SubResource( 50 )
 value = 100.0
 __meta__ = {
 "_edit_use_anchors_": false
