@@ -59,3 +59,8 @@ func _physics_process(delta):
 func death():
 	get_tree().reload_current_scene()
 	
+
+
+func _on_Muerte_al_caer_body_entered(body):
+	if body.get_name()=="Character":
+		body.global_position=Manager.start_position

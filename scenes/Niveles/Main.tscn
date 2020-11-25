@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://scenes/Objetos/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Objetos/MovingPlatform.tscn" type="PackedScene" id=2]
@@ -469,6 +469,9 @@ bg_color = Color( 0.14902, 0.364706, 0.462745, 1 )
 size = 12
 font_data = ExtResource( 8 )
 
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 689.652, 57.0847 )
+
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -602,3 +605,12 @@ __meta__ = {
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
 position = Vector2( 288, 144 )
+
+[node name="Muerte al caer" type="Area2D" parent="."]
+position = Vector2( 686.171, 625.627 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Muerte al caer"]
+visible = false
+position = Vector2( 6.09064, 6.36182 )
+shape = SubResource( 51 )
+[connection signal="body_entered" from="Muerte al caer" to="Character" method="_on_Muerte_al_caer_body_entered"]
