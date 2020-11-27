@@ -57,10 +57,18 @@ func _physics_process(delta):
 
 # Metodo de muerte. Llamar cuando el jugador muera
 func death():
+	Manager.time = 100.0
 	get_tree().reload_current_scene()
 	
 
-
+# Método para detectar caída al vacío
 func _on_Muerte_al_caer_body_entered(body):
-	if body.get_name()=="Character":
-		body.global_position=Manager.start_position
+	if body.get_name() == "Character":
+		body.death()
+
+
+# Por alguna razón al salir pedía este método, idealmente deberíamos
+# ver de dónde se llama para que no se llame de partida, pero weno,
+# esto evita el error por ahora B)
+func _on_screen_exited():
+	pass

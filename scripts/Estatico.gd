@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 
 # set_t esta ausente porque no hace nada esta caldera xd
+func set_t(t):
+	pass
+
 
 # Inicio
 func _ready():
