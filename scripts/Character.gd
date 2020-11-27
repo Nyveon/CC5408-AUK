@@ -67,6 +67,18 @@ func _on_Muerte_al_caer_body_entered(body):
 		body.death()
 
 
+# Método para detectar nivel terminado
+func _on_OrbeWin_body_entered(body):
+	if body.get_name() == "Character":
+		
+		# obtiene indice de próximo nivel
+		var next_level = Manager.current_level + 1
+		# actualiza variable nivel
+		Manager.current_level = next_level
+		# cambia de nivel
+		get_tree().change_scene(Manager.levels[next_level])
+
+
 # Por alguna razón al salir pedía este método, idealmente deberíamos
 # ver de dónde se llama para que no se llame de partida, pero weno,
 # esto evita el error por ahora B)

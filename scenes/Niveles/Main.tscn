@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://scenes/Objetos/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Objetos/MovingPlatform.tscn" type="PackedScene" id=2]
@@ -472,6 +472,8 @@ font_data = ExtResource( 8 )
 [sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 1111.34, 78.627 )
 
+[sub_resource type="CircleShape2D" id=52]
+
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -613,4 +615,11 @@ position = Vector2( 1.52008, 488.729 )
 visible = false
 position = Vector2( 6.09064, 6.36182 )
 shape = SubResource( 51 )
+
+[node name="OrbeWin" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrbeWin"]
+position = Vector2( 969.906, 112.202 )
+shape = SubResource( 52 )
 [connection signal="body_entered" from="Muerte al caer" to="Character" method="_on_Muerte_al_caer_body_entered"]
+[connection signal="body_entered" from="OrbeWin" to="Character" method="_on_OrbeWin_body_entered"]
