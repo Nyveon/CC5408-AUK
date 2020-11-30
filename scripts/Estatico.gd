@@ -1,5 +1,11 @@
 extends KinematicBody2D
 
+# Variables cronomanticos
+var current_time = 0
+var time_max = 200
+var time_min = -200
+
+
 # set_t esta ausente porque no hace nada esta caldera xd
 func set_t(t):
 	pass
