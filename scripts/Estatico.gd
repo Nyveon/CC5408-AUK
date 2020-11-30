@@ -1,9 +1,13 @@
 extends KinematicBody2D
 
-
 # set_t esta ausente porque no hace nada esta caldera xd
 func set_t(t):
 	pass
+
+
+# can_recieve_time esta ausente porque no hace nada esta caldera xd
+func can_receive_time(t):
+	return true
 
 
 # Inicio

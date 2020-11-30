@@ -6,6 +6,9 @@ onready var init_pos = global_position
 var period = 200.0
 var amplitude = 84
 
+# variables para checkeo de limites de tiempo
+var current_time = 0
+var time_limit = 200
 
 # Inicio
 func _ready():
@@ -37,6 +40,16 @@ func movement_x(t):
 # Sin movimiento en y
 func movement_y(t):
 	return 0
+
+
+# Determina si puede absorver más tiempo o no
+func can_receive_time(t):
+	var new_t = current_time + t
+	var it_can = new_t < time_limit and new_t > -time_limit
+	if it_can:
+		current_time = new_t
+		return true
+	return false
 
 
 # To be selecionado, o no seleccionado

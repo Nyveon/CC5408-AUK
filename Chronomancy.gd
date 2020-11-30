@@ -13,7 +13,6 @@ var moving = false			# Si el objeto se mueve en el tiempo ahora
 signal time_changed(value)	# Señal que indica un delta t
 onready var shader_outline = preload("res://shaders/outline.tres") # Shader de outline
 
-
 # set_t Default
 # Esto se sobreescribe en cualquier objeto con comportamiento especial
 func set_t(value):
@@ -41,10 +40,15 @@ func _physics_process(delta):
 	# Si esta seleccionado o moviendose
 	# (Piensen en moviendose como un toggle de seleccionado, que solo se desactiva al parar de poner una tecla)
 	if selected or moving:
+		
+		# Si el objeto llegó a su límite de tiempo
+		if not get_parent().can_receive_time(-time_direction * Manager.crono_power):
+			return  # xao pescao
+		
 		get_parent().set_material(shader_outline)
-		moving = is_pressed # Si algo esta apretado, se esta moviendo en el tiempo
+		moving = is_pressed  # Si algo esta apretado, se esta moviendo en el tiempo
 		self.t += time_direction * Manager.crono_power  # Self porque es un setter (!)
-		Manager.time -= 0.2*time_direction # Cambiar recurso en jugador
+		Manager.time -= 0.2*time_direction  # Cambiar recurso en jugador
 	else:
 		get_parent().set_material(null)
 
