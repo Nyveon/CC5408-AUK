@@ -1,7 +1,7 @@
 extends RichTextLabel
 
 # Variables default de dialogo, al invocar la caja hay que cambiar esto
-var dialogue = ["Hola! Esto es una caja de dialogo owo", "-insertar easter egg de arturo pratt-"]
+var dialogue = ["AAAAAAAAA NO TENGO DIALOGO AAAAAAAAAAAAAAAAAA", "a"]
 var page = 0 
 
 func _ready():

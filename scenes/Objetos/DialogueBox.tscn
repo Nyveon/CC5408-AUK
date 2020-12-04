@@ -5,15 +5,12 @@
 
 [node name="DialogueBox" type="CanvasLayer"]
 
-[node name="CanvasLayer" type="Polygon2D" parent="."]
+[node name="Box" type="Polygon2D" parent="."]
 position = Vector2( -8, 0 )
 color = Color( 0.101961, 0.113725, 0.196078, 0.54902 )
 polygon = PoolVector2Array( 48, 224, 48, 168, 368, 168, 368, 224 )
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Text" type="RichTextLabel" parent="."]
 margin_left = 56.0
 margin_top = 176.0
 margin_right = 344.0
@@ -28,4 +25,4 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.05
 autostart = true
-[connection signal="timeout" from="Timer" to="RichTextLabel" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Text" method="_on_Timer_timeout"]
