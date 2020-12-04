@@ -11,7 +11,8 @@ func _ready():
 	
 # Que hacer ucando el jugador hace click
 func _input(event):
-	if Input.is_mouse_button_pressed(1):
+	#if Input.is_mouse_button_pressed(1):
+	if event.is_action_pressed("dar_tiempo"):
 		if get_visible_characters() > get_total_character_count(): # Avanzar pagina
 			if page < dialogue.size()-1:
 				page += 1 

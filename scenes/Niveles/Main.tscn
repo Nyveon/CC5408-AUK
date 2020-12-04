@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://scenes/Objetos/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Objetos/MovingPlatform.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://scenes/Estatico.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/Objetos/Globo.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Objetos/Zariel.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Objetos/Tree.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -488,6 +489,9 @@ position = Vector2( 1008, -64 )
 [node name="MovingPlatform3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 384, 120 )
 
+[node name="Tree" parent="." instance=ExtResource( 15 )]
+position = Vector2( 168, 104 )
+
 [node name="Spikes" parent="." instance=ExtResource( 4 )]
 position = Vector2( -520, 24 )
 
@@ -607,9 +611,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 288, 144 )
-
 [node name="Muerte al caer" type="Area2D" parent="."]
 position = Vector2( 1.52008, 488.729 )
 
@@ -623,6 +624,9 @@ shape = SubResource( 51 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OrbeWin"]
 position = Vector2( 1184, -56 )
 shape = SubResource( 52 )
+
+[node name="Character" parent="." instance=ExtResource( 1 )]
+position = Vector2( 288, 144 )
 
 [node name="Globo" parent="." instance=ExtResource( 13 )]
 position = Vector2( 848, 280 )
