@@ -13,3 +13,10 @@ func _physics_process(delta):
 		
 	
 
+
+
+func _on_Zariel_input_event(viewport, event, shape_idx):
+	if !is_instance_valid(Manager.dialogue_box):
+		if Input.is_mouse_button_pressed(1):
+			Manager.dialogue_box = load("res://scenes/Objetos/DialogueBox.tscn").instance()
+			get_parent().add_child(Manager.dialogue_box)

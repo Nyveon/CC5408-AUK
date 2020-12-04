@@ -3,7 +3,7 @@
 [ext_resource path="res://fonts/steamwreck/Steamwreck.otf" type="DynamicFontData" id=1]
 
 [resource]
-size = 42
+size = 18
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )

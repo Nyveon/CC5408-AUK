@@ -3,8 +3,10 @@ extends Node
 # Declare member variables here. Examples:
 var crono_power = 5 # Multiplicador para que sea un poco mas notable el poder de cronomancia
 var time=100.0 setget set_time # Variable de time
-var start_position=Vector2(288,144)
+var start_position=Vector2(288,144) 
 signal time_changed(value)
+
+var dialogue_box = -1
 
 # lista de niveles
 var levels = [

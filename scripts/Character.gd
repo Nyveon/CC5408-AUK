@@ -14,7 +14,6 @@ var linear_vel = Vector2()
 func _ready():
 	# Signal de cuando sale del nivel.
 	get_node("VisibilityNotifier2D").connect("screen_exited", self, "_on_screen_exited")
-	pass # Replace with function body.
 
 
 # Step
