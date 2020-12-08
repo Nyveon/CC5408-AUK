@@ -19,19 +19,29 @@ func _ready():
 # Step
 func _physics_process(delta):
 	
-	# Movimiento horizontal
-	var target_vel = Input.get_action_strength("move_right") -\
-					 Input.get_action_strength("move_left")
-	linear_vel.x = lerp(linear_vel.x, target_vel * speed_x, FRICTION)
+	var target_vel = 0
 	
-	# Salto
-	if is_on_floor():
-		state_grounded = true
-		if Input.is_action_just_pressed("jump"):
+	if Manager.on_cutscene:
+		target_vel = Manager.cutscene_move
+		if Manager.cutscene_jump:
 			linear_vel.y -= speed_y
+			Manager.cutscene_jump = 0
+	
 	else:
-		state_grounded = false
 		
+		# Movimiento horizontal
+		target_vel = Input.get_action_strength("move_right") -\
+					Input.get_action_strength("move_left")
+		
+		# Salto
+		if is_on_floor():
+			state_grounded = true
+			if Input.is_action_just_pressed("jump"):
+				linear_vel.y -= speed_y
+		else:
+			state_grounded = false
+	
+	linear_vel.x = lerp(linear_vel.x, target_vel * speed_x, FRICTION)
 	linear_vel.y += GRAVITY
 	
 	linear_vel = move_and_slide(linear_vel, Vector2.UP)
@@ -64,18 +74,6 @@ func death():
 func _on_Muerte_al_caer_body_entered(body):
 	if body.get_name() == "Character":
 		body.death()
-
-
-# Método para detectar nivel terminado
-func _on_OrbeWin_body_entered(body):
-	if body.get_name() == "Character":
-		
-		# obtiene indice de próximo nivel
-		var next_level = Manager.current_level + 1
-		# actualiza variable nivel
-		Manager.current_level = next_level
-		# cambia de nivel
-		get_tree().change_scene(Manager.levels[next_level])
 
 
 # Por alguna razón al salir pedía este método, idealmente deberíamos

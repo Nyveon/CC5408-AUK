@@ -7,7 +7,7 @@ func _ready():
 
 # Recibir señal del boton de start
 func on_Start_pressed():
-	get_tree().change_scene("res://scenes/Niveles/Main.tscn")
+	get_tree().change_scene("res://scenes/Niveles/InitialCutscene.tscn")
 
 # Recibir señal del boton de exit
 func on_Exit_pressed():

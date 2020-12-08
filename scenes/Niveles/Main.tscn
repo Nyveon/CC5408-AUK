@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://scenes/Objetos/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Objetos/MovingPlatform.tscn" type="PackedScene" id=2]
@@ -16,7 +16,7 @@
 [ext_resource path="res://scenes/Objetos/Zariel.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/Objetos/Tree.tscn" type="PackedScene" id=15]
 [ext_resource path="res://sprites/btiles.tres" type="TileSet" id=16]
-[ext_resource path="res://sprites/paper.png" type="Texture" id=17]
+[ext_resource path="res://scenes/Objetos/PaperWin.tscn" type="PackedScene" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -477,8 +477,6 @@ font_data = ExtResource( 8 )
 [sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 1111.34, 78.627 )
 
-[sub_resource type="CircleShape2D" id=52]
-
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -627,15 +625,8 @@ visible = false
 position = Vector2( 6.09064, 6.36182 )
 shape = SubResource( 51 )
 
-[node name="OrbeWin" type="Area2D" parent="."]
-
-[node name="Sprite" type="Sprite" parent="OrbeWin"]
-position = Vector2( 1184, -56 )
-texture = ExtResource( 17 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OrbeWin"]
-position = Vector2( 1184, -56 )
-shape = SubResource( 52 )
+[node name="PaperWin" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1180.4, -46.1841 )
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
 position = Vector2( 288, 144 )
@@ -646,4 +637,3 @@ input_pickable = true
 
 [node name="Zariel" parent="." instance=ExtResource( 14 )]
 [connection signal="body_entered" from="Muerte al caer" to="Character" method="_on_Muerte_al_caer_body_entered"]
-[connection signal="body_entered" from="OrbeWin" to="Character" method="_on_OrbeWin_body_entered"]

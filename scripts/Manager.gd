@@ -8,9 +8,14 @@ signal time_changed(value)
 
 var dialogue_box = -1
 
+# cutscene options
+var on_cutscene = false
+var cutscene_move = 0
+var cutscene_jump = 0
+
 # lista de niveles
 var levels = [
-	"res://scenes/Niveles/Main.tscn",
+	"res://scenes/Niveles/InitialCutscene.tscn",
 	"res://scenes/Niveles/Level1.tscn",
 	"res://scenes/Niveles/Level2.tscn",
 ]
