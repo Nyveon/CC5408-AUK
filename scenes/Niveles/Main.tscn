@@ -17,6 +17,7 @@
 [ext_resource path="res://scenes/Objetos/Tree.tscn" type="PackedScene" id=15]
 [ext_resource path="res://sprites/btiles.tres" type="TileSet" id=16]
 [ext_resource path="res://scenes/Objetos/PaperWin.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/Objetos/MuerteAlCaer.tscn" type="PackedScene" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -474,9 +475,6 @@ bg_color = Color( 0.14902, 0.364706, 0.462745, 1 )
 size = 12
 font_data = ExtResource( 8 )
 
-[sub_resource type="RectangleShape2D" id=51]
-extents = Vector2( 1111.34, 78.627 )
-
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -617,13 +615,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Muerte al caer" type="Area2D" parent="."]
-position = Vector2( 1.52008, 488.729 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Muerte al caer"]
-visible = false
-position = Vector2( 6.09064, 6.36182 )
-shape = SubResource( 51 )
+[node name="MuerteAlCaer" parent="." instance=ExtResource( 18 )]
 
 [node name="PaperWin" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1180.4, -46.1841 )
@@ -636,4 +628,3 @@ position = Vector2( 848, 280 )
 input_pickable = true
 
 [node name="Zariel" parent="." instance=ExtResource( 14 )]
-[connection signal="body_entered" from="Muerte al caer" to="Character" method="_on_Muerte_al_caer_body_entered"]

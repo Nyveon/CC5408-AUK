@@ -68,12 +68,6 @@ func _physics_process(delta):
 func death():
 	Manager.time = 100.0
 	get_tree().reload_current_scene()
-	
-
-# Método para detectar caída al vacío
-func _on_Muerte_al_caer_body_entered(body):
-	if body.get_name() == "Character":
-		body.death()
 
 
 # Por alguna razón al salir pedía este método, idealmente deberíamos

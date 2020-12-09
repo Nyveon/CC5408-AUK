@@ -2,7 +2,7 @@ extends Node2D
 
 
 # time since start of cutscene
-var time = 0
+var time = -8  # empieza en negativo por el fadeout uwu
 
 # to ensure one activation
 var set_1 = false
