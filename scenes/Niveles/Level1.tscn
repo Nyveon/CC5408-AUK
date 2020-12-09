@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Objetos/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Objetos/Floor.tscn" type="PackedScene" id=2]
@@ -6,8 +6,13 @@
 [ext_resource path="res://scenes/Objetos/PaperWin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Objetos/Globo.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Objetos/MuerteAlCaer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/UI/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scripts/Main.gd" type="Script" id=8]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
 
 [node name="Tree" parent="." instance=ExtResource( 3 )]
 position = Vector2( 279.698, 90.0544 )

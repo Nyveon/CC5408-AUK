@@ -25,6 +25,7 @@ extents = Vector2( 24, 5.29542 )
 radius = 50.7871
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
+input_pickable = true
 motion/sync_to_physics = true
 script = ExtResource( 3 )
 __meta__ = {
