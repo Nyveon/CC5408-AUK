@@ -18,6 +18,8 @@ var levels = [
 	"res://scenes/Niveles/InitialCutscene.tscn",
 	"res://scenes/Niveles/Level1.tscn",
 	"res://scenes/Niveles/Level2.tscn",
+	"res://scenes/Niveles/Level3.tscn",
+	"res://scenes/Niveles/Credits.tscn",
 ]
 # indice de nivel actual
 var current_level = 0

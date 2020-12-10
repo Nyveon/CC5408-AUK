@@ -1,0 +1,23 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 27.0
+margin_top = 33.0
+margin_right = 380.0
+margin_bottom = 213.0
+text = "¡Gracias por Jugar ChronoIndex!
+
+
+
+
+
+
+
+
+
+							Juego creado por Auk Producciones"
+__meta__ = {
+"_edit_use_anchors_": false
+}
