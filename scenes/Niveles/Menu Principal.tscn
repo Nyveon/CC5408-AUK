@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/Menu Principal.gd" type="Script" id=2]
 [ext_resource path="res://fonts/steamwreck/Steamwreck.otf" type="DynamicFontData" id=3]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.411765, 0.227451, 1 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -23,7 +23,7 @@ margin_left = 0.524506
 margin_top = -0.0476456
 margin_right = 0.524506
 margin_bottom = -0.0476379
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
