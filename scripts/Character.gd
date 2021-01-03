@@ -9,6 +9,8 @@ var GRAVITY = 20
 var state_grounded = true  # Si el jugador esta en el piso o no
 var linear_vel = Vector2()
 
+var on_vines = false
+
 
 # Start
 func _ready():
@@ -42,7 +44,13 @@ func _physics_process(delta):
 			state_grounded = false
 	
 	linear_vel.x = lerp(linear_vel.x, target_vel * speed_x, FRICTION)
-	linear_vel.y += GRAVITY
+	
+	if on_vines:
+		var updown_move = Input.get_action_strength("move_down") -\
+					Input.get_action_strength("move_up")
+		linear_vel.y = lerp(linear_vel.y, updown_move * speed_x, FRICTION)
+	else:
+		linear_vel.y += GRAVITY
 	
 	linear_vel = move_and_slide(linear_vel, Vector2.UP)
 	
