@@ -1,23 +1,24 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="Animation" id=1]
+resource_name = "Fade"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 27.0
-margin_top = 33.0
-margin_right = 380.0
-margin_bottom = 213.0
-text = "¡Gracias por Jugar ChronoIndex!
-
-
-
-
-
-
-
-
-
-							Juego creado por Auk Producciones"
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Text" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "HELLO"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+anims/Fade = SubResource( 1 )
