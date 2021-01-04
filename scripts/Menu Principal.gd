@@ -12,3 +12,6 @@ func on_Start_pressed():
 # Recibir señal del boton de exit
 func on_Exit_pressed():
 	get_tree().quit()  # Cierra el juego
+
+func _on_Creditos_pressed():
+	get_tree().change_scene("res://scenes/Niveles/Credits.tscn")

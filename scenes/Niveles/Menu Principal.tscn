@@ -68,3 +68,4 @@ text = "Salir"
 position = Vector2( 129.627, 66.8827 )
 scale = Vector2( 0.165863, 0.165863 )
 texture = ExtResource( 1 )
+[connection signal="pressed" from="Panel/VBoxContainer/Creditos" to="." method="_on_Creditos_pressed"]
