@@ -8,6 +8,7 @@ var FRICTION = 0.2
 var GRAVITY = 26 #antes era 20
 var state_grounded = true  # Si el jugador esta en el piso o no
 var linear_vel = Vector2()
+var mouse_pos = get_global_mouse_position() - global_position
 
 var on_vines = false
 
@@ -20,6 +21,10 @@ func _ready():
 
 # Step
 func _physics_process(delta):
+	mouse_pos = get_global_mouse_position() - global_position
+	var mouse_dir2 = (mouse_pos).normalized()
+	var mouse_dir3 = Vector3(mouse_dir2.x, mouse_dir2.y, 0)
+	$Particles2D.process_material.direction = mouse_dir3 #set("direction", mouse_dir3)
 	
 	var target_vel = 0
 	

@@ -15,6 +15,9 @@ material = ExtResource( 6 )
 input_pickable = true
 motion/sync_to_physics = true
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Engranaje" type="Sprite" parent="."]
 use_parent_material = true

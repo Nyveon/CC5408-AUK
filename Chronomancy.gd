@@ -15,6 +15,12 @@ var crono_cost = 1 #multiplicador a cuanto tiempo cuesta moverse
 signal time_changed(value)	# Señal que indica un delta t
 onready var shader_outline = preload("res://shaders/outline.tres") # Shader de outline
 onready var chroma_ab = preload("res://shaders/chromatic_aberration.tres") # Shader de chromab
+#onready var particles = preload("res://scenes/Objetos/ChronomancyParticles.tscn")
+var player_particle_flag = false
+
+func _ready():
+	#add_child(particles.instance())
+	pass
 
 # set_t Default
 # Esto se sobreescribe en cualquier objeto con comportamiento especial
@@ -39,6 +45,8 @@ func is_at_limit():
 
 # Step
 func _physics_process(delta):
+	var pre_moving = moving
+	var pre_limit = is_at_limit()
 	# -Definir accion de cronomancia
 	# time_driection: Hacia el pasado (-1), el futuro (1) o congelado (0)
 	time_direction = Input.get_action_strength("dar_tiempo") - Input.get_action_strength("quitar_tiempo")  
@@ -52,13 +60,14 @@ func _physics_process(delta):
 	# Si no se esta apretando nada, no se esta moviendo
 	if not is_pressed:
 		moving = false
+		
 	
 	# Si esta seleccionado o moviendose
 	# (Piensen en moviendose como un toggle de seleccionado, que solo se desactiva al parar de poner una tecla)
 	if selected or moving:
-		
 		# Si el objeto llegó a su límite de tiempo
 		if not can_receive_time(-time_direction * Manager.crono_power):
+			moving = false
 			return  # xao pescao
 		
 		get_parent().set_material(shader_outline)
@@ -68,7 +77,29 @@ func _physics_process(delta):
 	else:
 		get_parent().set_material(null)
 	
+	# Particulas
+	#$Particles2D.position = get_parent().global_position
+	#var mouse_dir2 = (get_parent().global_position - get_parent().get_parent().get_node("Character").global_position).normalized()
+	#var mouse_dir3 = Vector3(mouse_dir2.x, mouse_dir2.y, 0)
+	#$Particles2D.process_material.direction = mouse_dir3
+	
+	if moving:
+		#$Particles2D.emitting = true
+		get_parent().get_parent().get_node("Character").get_node("Particles2D").emitting = true
+		get_parent().get_parent().get_node("Character").get_node("Particles2D").lifetime = (get_parent().get_parent().get_node("Character").mouse_pos).length()/get_parent().get_parent().get_node("Character").get_node("Particles2D").process_material.initial_velocity
+		#get_parent().get_parent().get_node("Character").get_node("Particles2D").lifetime = (get_parent().get_parent().get_node("Character").global_position - get_parent().get_node("CollisionShape2D").global_position).length()/get_parent().get_parent().get_node("Character").get_node("Particles2D").process_material.initial_velocity
+	else:
+		#$Particles2D.emitting = false
+		pass
+		
+	if (moving != pre_moving) or (is_at_limit() != pre_limit):
+		get_parent().get_parent().get_node("Character").get_node("Particles2D").emitting = false
+
+		
+		
+	
 	if is_at_limit():
+		moving = false
 		get_parent().set_material(chroma_ab) # Shader para mostrar que esta en el borde del tiempo
 
 
