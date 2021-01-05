@@ -4,7 +4,7 @@ extends KinematicBody2D
 # Inicializacion de variables
 onready var init_pos = global_position
 var period = 200.0
-var amplitude = 84
+var amplitude = 120
 
 # variables para checkeo de limites de tiempo
 var current_time = 0

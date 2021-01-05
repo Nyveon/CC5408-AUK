@@ -24,7 +24,7 @@ extents = Vector2( 24, 5.29542 )
 [sub_resource type="CircleShape2D" id=3]
 radius = 50.7871
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="Globo" type="KinematicBody2D"]
 input_pickable = true
 motion/sync_to_physics = true
 script = ExtResource( 3 )

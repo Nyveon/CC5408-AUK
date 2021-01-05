@@ -3,9 +3,9 @@ extends KinematicBody2D
 
 # Declare member variables here. Examples:
 var speed_x = 180
-var speed_y = 300
+var speed_y = 350 # antes era 300, bajado para que sea mas dificil saltar
 var FRICTION = 0.2
-var GRAVITY = 20
+var GRAVITY = 26 #antes era 20
 var state_grounded = true  # Si el jugador esta en el piso o no
 var linear_vel = Vector2()
 
