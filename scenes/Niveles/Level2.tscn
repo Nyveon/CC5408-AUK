@@ -33,7 +33,7 @@ tile_data = PoolIntArray( -2228229, 0, 65537, -2228228, 0, 65538, -2228227, 0, 6
 position = Vector2( 260.26, -354.763 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 5 )]
-position = Vector2( 224.804, 157.657 )
+position = Vector2( 240.804, 157.657 )
 
 [node name="FallingBox" parent="." instance=ExtResource( 8 )]
 position = Vector2( 441.119, 32.8066 )
