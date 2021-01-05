@@ -5,6 +5,7 @@
 
 [node name="Particles2D" type="Particles2D"]
 show_behind_parent = true
+position = Vector2( 0, -8 )
 amount = 128
 lifetime = 2.0
 local_coords = false

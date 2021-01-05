@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/Objetos/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Objetos/Floor.tscn" type="PackedScene" id=2]
@@ -9,10 +9,14 @@
 [ext_resource path="res://scenes/UI/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/Main.gd" type="Script" id=8]
 [ext_resource path="res://sprites/interior.png" type="Texture" id=9]
-[ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=10]
 [ext_resource path="res://sprites/house.png" type="Texture" id=11]
 [ext_resource path="res://sprites/ground_tilest.tres" type="TileSet" id=12]
 [ext_resource path="res://scenes/Objetos/bird.tscn" type="PackedScene" id=13]
+[ext_resource path="res://sprites/bg2/sky_cloud.png" type="Texture" id=15]
+[ext_resource path="res://sprites/bg2/cloud.png" type="Texture" id=16]
+[ext_resource path="res://sprites/bg2/mountain2.png" type="Texture" id=17]
+[ext_resource path="res://sprites/bg2/pine1.png" type="Texture" id=18]
+[ext_resource path="res://sprites/bg2/pine2.png" type="Texture" id=19]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 8 )
@@ -90,7 +94,56 @@ region_rect = Rect2( 64, 0, 96, 80 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D"]
 
-[node name="Background" parent="." instance=ExtResource( 10 )]
-
 [node name="Bird" parent="." instance=ExtResource( 13 )]
 position = Vector2( 208, 16 )
+
+[node name="Background2" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background2"]
+offset = Vector2( 0, 40 )
+transform = Transform2D( 1, 0, 0, 1, 0, 40 )
+scroll_base_scale = Vector2( 0.5, 0.5 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background2/ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+motion_mirroring = Vector2( 688, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background2/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 344, 0 )
+scale = Vector2( 1, 2 )
+texture = ExtResource( 15 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Background2/ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 688, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background2/ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 344, -32 )
+texture = ExtResource( 17 )
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="Background2/ParallaxBackground"]
+motion_scale = Vector2( 0.2, 0.2 )
+motion_mirroring = Vector2( 688, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background2/ParallaxBackground/ParallaxLayer6"]
+position = Vector2( 320, -128 )
+texture = ExtResource( 16 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background2/ParallaxBackground"]
+motion_scale = Vector2( 0.3, 0.3 )
+motion_offset = Vector2( 0, 40 )
+motion_mirroring = Vector2( 688, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background2/ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 344, 0 )
+texture = ExtResource( 19 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background2/ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.4 )
+motion_offset = Vector2( 0, 60 )
+motion_mirroring = Vector2( 688, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background2/ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 344, 0 )
+texture = ExtResource( 18 )
+region_rect = Rect2( 0, 0, 688, 148 )
