@@ -10,7 +10,6 @@ var current_time = time_max_local
 func set_t(t):
 	current_time = clamp(current_time, 0, time_max_local)
 	$AnimationPlayer.seek(t/time_max_local*11, true)
-	print(t)
 	pass
 
 

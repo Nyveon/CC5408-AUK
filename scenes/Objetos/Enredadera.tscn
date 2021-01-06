@@ -1,8 +1,29 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://sprites/vines.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Objetos/Enredadera.gd" type="Script" id=2]
 [ext_resource path="res://sprites/vinepalette.png" type="Texture" id=3]
+[ext_resource path="res://Chronomancy.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 48, 48 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "growth"
+length = 12.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -72 ) ]
+}
 
 [sub_resource type="TileSet" id=1]
 0/name = "vines.png 0"
@@ -62,12 +83,29 @@
 3/shapes = [  ]
 3/z_index = 0
 
-[node name="Enredadera" type="Node2D"]
+[node name="Enredadera" type="KinematicBody2D"]
+input_pickable = true
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 2 )
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 48, 48 )
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.0
+anims/growth = SubResource( 2 )
+
 [node name="Area2D" type="Area2D" parent="."]
+use_parent_material = true
+position = Vector2( 0, -72 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="TileMap2" type="TileMap" parent="Area2D"]
+use_parent_material = true
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -75,5 +113,8 @@ tile_data = PoolIntArray( 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 3, 0, 5, 3, 0, 
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( -0.409969, 0.179394, 95.3933, -0.292543, 95.8652, 92.6791, 80.2913, 91.7352, 79.8194, 59.1715, 64.7174, 58.6996, 63.3015, 78.049, 14.692, 78.049, 15.6359, 59.1715, -0.881907, 58.6996 )
+
+[node name="Chronomancy" type="Node" parent="."]
+script = ExtResource( 4 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
