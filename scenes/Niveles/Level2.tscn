@@ -22,7 +22,7 @@ script = ExtResource( 7 )
 [node name="CanvasLayer" parent="." instance=ExtResource( 6 )]
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 206.848, -275.14 )
+position = Vector2( 18.4901, 126.145 )
 
 [node name="PaperWin" parent="." instance=ExtResource( 2 )]
 position = Vector2( 816.804, -378.343 )
