@@ -11,7 +11,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	t += delta
-	if t > 4:
-		set_modulate(lerp(get_modulate(), Color(1,1,1,0), 0.02))
+#func _process(delta):
+#	t += delta
+#	if t > 4:
+#		set_modulate(lerp(get_modulate(), Color(1,1,1,0), 0.02))

@@ -1,49 +1,268 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/Objetos/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/reading.png" type="Texture" id=2]
 [ext_resource path="res://scripts/InitialCutscene.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Objetos/PaperWin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/FadeOut.gd" type="Script" id=5]
 [ext_resource path="res://fonts/steamwreck/new_dynamicfont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://scripts/Title.gd" type="Script" id=7]
 [ext_resource path="res://sprites/interiorcasa.png" type="Texture" id=8]
+[ext_resource path="res://sprites/hole.png" type="Texture" id=9]
+[ext_resource path="res://scenes/Animaciones/NivelesCutscene1.tres" type="Animation" id=10]
+[ext_resource path="res://sprites/evil1.png" type="Texture" id=11]
+
+[sub_resource type="Animation" id=11]
+resource_name = "Cutscene1.5"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sleepy Boi:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "Cutscene1.75"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sleepy Boi:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Cutscene2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("FadeOut:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EVIL:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Hole:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sleepy Boi:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "Cutscene3"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("FadeOut:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EVIL:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Character:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sleepy Boi:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("PaperWin:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 168, 10 )
 
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 46.3835, 19.3602 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 750, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 600, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="InitialCutscene" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="Cutscene" type="AnimationPlayer" parent="."]
+anims/Cutscene1 = ExtResource( 10 )
+anims/Cutscene1.5 = SubResource( 11 )
+anims/Cutscene1.75 = SubResource( 12 )
+anims/Cutscene2 = SubResource( 10 )
+anims/Cutscene3 = SubResource( 13 )
+
 [node name="Interior" type="Sprite" parent="."]
 position = Vector2( 200, 128 )
+scale = Vector2( -1, 1 )
 texture = ExtResource( 8 )
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 80, 176 )
+position = Vector2( 87.2296, 130.643 )
+size = 1.0
 
 [node name="PaperWin" parent="." instance=ExtResource( 4 )]
-position = Vector2( 176, 168 )
-
-[node name="FadeOut" type="Polygon2D" parent="."]
-visible = false
-color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( -3.34838, 6.93477, 402.976, 6.93477, 404.866, 255.769, -4.60831, 254.509 )
-script = ExtResource( 5 )
-
-[node name="Title" type="RichTextLabel" parent="."]
-margin_left = 32.261
-margin_top = 36.7627
-margin_right = 285.261
-margin_bottom = 90.7627
-custom_fonts/normal_font = ExtResource( 6 )
-text = "Cutscene inicial,,,,,"
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+position = Vector2( 223.699, 166.804 )
 
 [node name="Area2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 200, 200 )
 shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 66.1459, 180.169 )
+shape = SubResource( 14 )
+
+[node name="Sleepy Boi" type="AnimatedSprite" parent="."]
+position = Vector2( 87.5403, 148.942 )
+frames = SubResource( 8 )
+frame = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Hole" type="Sprite" parent="."]
+position = Vector2( 197.759, 29.2527 )
+texture = ExtResource( 9 )
+
+[node name="EVIL" type="Sprite" parent="."]
+visible = false
+position = Vector2( 201.065, 117.794 )
+texture = ExtResource( 11 )
+
+[node name="FadeOut" type="Polygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -3.34838, 6.93477, 402.976, 6.93477, 404.866, 255.769, -4.60831, 254.509 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 11.644
+margin_top = 15.7596
+margin_right = 264.644
+margin_bottom = 69.7596
+custom_fonts/normal_font = ExtResource( 6 )
+bbcode_text = "En una cómoda cómoda de ciudad cómoda..."
+text = "En una cómoda cómoda de ciudad cómoda..."
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
