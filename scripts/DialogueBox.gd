@@ -28,4 +28,6 @@ func _on_Timer_timeout():
 	set_visible_characters(get_visible_characters() + 1) # Animacion de texto
 
 func _physics_process(delta):
+	if dialogue[page][1] == "Elías":
+		pass
 	get_parent().get_node("NameText").page = page

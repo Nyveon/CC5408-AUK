@@ -86,6 +86,7 @@ func _physics_process(delta):
 	if moving:
 		#$Particles2D.emitting = true
 		get_parent().get_parent().get_node("Character").get_node("Particles2D").emitting = true
+		# vvv "../../Character"
 		get_parent().get_parent().get_node("Character").get_node("Particles2D").lifetime = (get_parent().get_parent().get_node("Character").mouse_pos).length()/get_parent().get_parent().get_node("Character").get_node("Particles2D").process_material.initial_velocity
 		#get_parent().get_parent().get_node("Character").get_node("Particles2D").lifetime = (get_parent().get_parent().get_node("Character").global_position - get_parent().get_node("CollisionShape2D").global_position).length()/get_parent().get_parent().get_node("Character").get_node("Particles2D").process_material.initial_velocity
 	else:
