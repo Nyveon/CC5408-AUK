@@ -5,14 +5,16 @@
 [ext_resource path="res://scripts/Main.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Objetos/Spikes.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sprites/Steampunk Blocks.png" type="Texture" id=5]
-[ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sprites/Background.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/UI/HUD.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/Estatico.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Objetos/Estatico.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/Objetos/Globo.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Objetos/Zariel.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/Objetos/Tree.tscn" type="PackedScene" id=15]
 [ext_resource path="res://sprites/btiles.tres" type="TileSet" id=16]
 [ext_resource path="res://scenes/Objetos/PaperWin.tscn" type="PackedScene" id=17]
+
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )

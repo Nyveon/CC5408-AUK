@@ -12,8 +12,8 @@
 [ext_resource path="res://scenes/Objetos/MuerteAlCaer.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Objetos/Spikes.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/Objetos/Pendulum.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/Estatico.tscn" type="PackedScene" id=14]
+[ext_resource path="res://sprites/Background.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/Objetos/Estatico.tscn" type="PackedScene" id=14]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 79.196, -5.6568 )

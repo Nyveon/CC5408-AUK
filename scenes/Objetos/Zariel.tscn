@@ -89,17 +89,13 @@ tracks/0/keys = {
 extents = Vector2( 10, 13.6505 )
 
 [node name="Zariel" type="KinematicBody2D"]
-position = Vector2( 64.7079, 164.011 )
 scale = Vector2( 0.75, 0.75 )
 input_pickable = true
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Body" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
-frame = 3
+frame = 2
 speed_scale = 2.0
 playing = true
 
