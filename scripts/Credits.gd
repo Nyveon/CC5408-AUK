@@ -6,12 +6,19 @@ extends Control
 # var b = "text"
 
 var credits = [
-	"Autoría:\nAuk Producciones\nFCFM Uchile\n2020",
+	"Autoría de ChronoIndex:\nAuk Producciones\nFCFM Uchile\nCC5408-1 - Primavera 2020",
 	"Agradecemos a los propietarios\nde los siguientes assets utilizados:",
 	"SanctumPixel\nFire Column Pixel Art Effect",
 	"LuizMelo\nMedieval Warrior Pack 2",
 	"KnoblePersona\nSteampunk Level Tileset Mega Pack",
-	"Trixie\nStringstar Fields"
+	"SanctumPixel\nForest Lite Pixel Art Tileset",
+	"Trixie\nStringstar Fields",
+	"Vnitti\nTaiga Asset Pack",
+	"Ma9ici4n\nPixel Art Bird",
+	"Daymarius\nRetro Gaming Font",
+	"Reemax\n[LPC] House interior and decorations",
+	"Bevouliin.com\nFree Game Obstacle - Spikes",
+	"Finalmente agradecemos especialmente\na nuestro profesor:\nElías Zelada"
 ]
 
 var counter=0
