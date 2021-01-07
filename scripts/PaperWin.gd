@@ -29,4 +29,5 @@ func _on_PaperWin_body_entered(body):
 		# actualiza variable nivel
 		Manager.current_level = next_level
 		# cambia de nivel
+		Manager.time = 100
 		get_tree().change_scene(Manager.levels[next_level])

@@ -19,6 +19,7 @@ func _ready():
 	$Chronomancy.crono_cost = 0.1
 	connect("mouse_entered", self, "_on_mouse_entered")
 	connect("mouse_exited", self, "_on_mouse_exited")
+	$Chronomancy.t = 0
 
 
 # Funcion: ¿Que pasa cuando cambia el tiempo?

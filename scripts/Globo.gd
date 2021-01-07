@@ -12,10 +12,11 @@ var time_max = 1024
 var time_min = -1024
 var fire_speed = 0.1
 var fire_frame = 0
+var crono_cost = 3
 
 # Inicio
 func _ready():
-	
+	$Chronomancy.crono_cost = 2.6
 	# Usar componente de Chronomancy
 	$Chronomancy.connect("time_changed", self, "set_t")
 	connect("mouse_entered", self, "_on_mouse_entered")

@@ -13,12 +13,11 @@ var time_min = -200
 
 # Inicio
 func _ready():
-	
+	$Chronomancy.crono_cost = 1.2
 	# Usar componente de Chronomancy
 	$Chronomancy.connect("time_changed", self, "set_t")
 	connect("mouse_entered", self, "_on_mouse_entered")
 	connect("mouse_exited", self, "_on_mouse_exited")
-	$Chronomancy.t = current_time
 
 
 # Funcion: ¿Que pasa cuando cambia el tiempo?

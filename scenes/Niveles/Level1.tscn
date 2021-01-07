@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/Objetos/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Objetos/Floor.tscn" type="PackedScene" id=2]
@@ -8,17 +8,16 @@
 [ext_resource path="res://scenes/Objetos/MuerteAlCaer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/UI/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/Main.gd" type="Script" id=8]
-[ext_resource path="res://sprites/interior.png" type="Texture" id=9]
+[ext_resource path="res://scenes/Background2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Objetos/Bridge.tscn" type="PackedScene" id=10]
 [ext_resource path="res://sprites/house.png" type="Texture" id=11]
 [ext_resource path="res://sprites/ground_tilest.tres" type="TileSet" id=12]
 [ext_resource path="res://scenes/Objetos/bird.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Objetos/Zariel.tscn" type="PackedScene" id=14]
-[ext_resource path="res://sprites/bg2/sky_cloud.png" type="Texture" id=15]
-[ext_resource path="res://sprites/bg2/cloud.png" type="Texture" id=16]
-[ext_resource path="res://sprites/bg2/mountain2.png" type="Texture" id=17]
-[ext_resource path="res://sprites/bg2/pine1.png" type="Texture" id=18]
-[ext_resource path="res://sprites/bg2/pine2.png" type="Texture" id=19]
+[ext_resource path="res://sprites/btiles.tres" type="TileSet" id=15]
+[ext_resource path="res://sprites/controls.png" type="Texture" id=16]
+[ext_resource path="res://scenes/Niveles/controls.gd" type="Script" id=17]
+[ext_resource path="res://scenes/Objetos/Zariel2.tscn" type="PackedScene" id=20]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 8 )
@@ -63,95 +62,38 @@ cell_tile_origin = 1
 format = 1
 tile_data = PoolIntArray( -65541, 2, 0, 393261, 16, 0, 524287, 2, 0, 458752, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 458760, 4, 0, 458761, 4, 0, 458762, 5, 0, 458764, 17, 0, 458774, 16, 0, 458789, 17, 0, 458792, 16, 0, 458793, 2, 0, 458794, 4, 0, 458795, 4, 0, 458796, 4, 0, 458797, 4, 0, 458798, 5, 0, 524298, 2, 0, 524299, 4, 0, 524300, 4, 0, 524301, 4, 0, 524302, 4, 0, 524303, 4, 0, 524304, 4, 0, 524305, 4, 0, 524306, 4, 0, 524307, 4, 0, 524308, 4, 0, 524309, 4, 0, 524310, 4, 0, 524311, 5, 0, 524322, 2, 0, 524323, 4, 0, 524324, 4, 0, 524325, 4, 0, 524326, 4, 0, 524327, 4, 0, 524328, 4, 0, 524329, 4, 0 )
 
+[node name="Decoration" type="TileMap" parent="."]
+position = Vector2( 5, 10 )
+tile_set = ExtResource( 15 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+cell_tile_origin = 1
+format = 1
+tile_data = PoolIntArray( -524231, 33, 0, -524218, 12, 0, -524217, 20, 0, -458681, 36, 0, -327622, 6, 0, -262074, 7, 0, 393264, 33, 0 )
+
 [node name="MuerteAlCaer" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3.52005, 409.802 )
 
 [node name="MuerteAlCaer2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 589.52, 333.802 )
 
-[node name="Librero" type="Sprite" parent="."]
-light_mask = 0
-position = Vector2( 88, -104 )
-scale = Vector2( 0.6875, 0.625 )
-texture = ExtResource( 9 )
-region_enabled = true
-region_rect = Rect2( 32, 208, 32, 48 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Librero"]
-show_behind_parent = true
-position = Vector2( 4.36363, -118.4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Librero/StaticBody2D"]
-
-[node name="Paredes" type="Sprite" parent="."]
-show_behind_parent = true
-light_mask = 0
-position = Vector2( 80, -120 )
-scale = Vector2( 1.13542, 0.833333 )
-texture = ExtResource( 9 )
-region_enabled = true
-region_rect = Rect2( 64, 0, 96, 80 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Paredes"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes/StaticBody2D"]
-
 [node name="Bird" parent="." instance=ExtResource( 13 )]
-position = Vector2( 208, 16 )
+position = Vector2( 224.652, 32.9896 )
 
-[node name="Background2" type="CanvasLayer" parent="."]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Background2"]
-offset = Vector2( 0, 40 )
-transform = Transform2D( 1, 0, 0, 1, 0, 40 )
-scroll_base_scale = Vector2( 0.5, 0.5 )
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background2/ParallaxBackground"]
-motion_scale = Vector2( 0, 0 )
-motion_mirroring = Vector2( 688, 0 )
-
-[node name="Sprite" type="Sprite" parent="Background2/ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 344, -8 )
-scale = Vector2( 1, 2 )
-texture = ExtResource( 15 )
-
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="Background2/ParallaxBackground"]
-motion_scale = Vector2( 0.1, 0.1 )
-motion_mirroring = Vector2( 688, 0 )
-
-[node name="Sprite" type="Sprite" parent="Background2/ParallaxBackground/ParallaxLayer5"]
-position = Vector2( 344, -32 )
-texture = ExtResource( 17 )
-
-[node name="ParallaxLayer6" type="ParallaxLayer" parent="Background2/ParallaxBackground"]
-motion_scale = Vector2( 0.2, 0.2 )
-motion_mirroring = Vector2( 688, 0 )
-
-[node name="Sprite" type="Sprite" parent="Background2/ParallaxBackground/ParallaxLayer6"]
-position = Vector2( 320, -128 )
-texture = ExtResource( 16 )
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background2/ParallaxBackground"]
-motion_scale = Vector2( 0.3, 0.3 )
-motion_offset = Vector2( 0, 40 )
-motion_mirroring = Vector2( 688, 0 )
-
-[node name="Sprite" type="Sprite" parent="Background2/ParallaxBackground/ParallaxLayer4"]
-position = Vector2( 344, 0 )
-texture = ExtResource( 19 )
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background2/ParallaxBackground"]
-motion_scale = Vector2( 0.4, 0.4 )
-motion_offset = Vector2( 0, 60 )
-motion_mirroring = Vector2( 688, 0 )
-
-[node name="Sprite" type="Sprite" parent="Background2/ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 344, 0 )
-texture = ExtResource( 18 )
-region_rect = Rect2( 0, 0, 688, 148 )
+[node name="Background2" parent="." instance=ExtResource( 9 )]
 
 [node name="Zariel" parent="." instance=ExtResource( 14 )]
 position = Vector2( 214.506, 123.73 )
 
+[node name="Zariel2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 987.557, -114.011 )
+
 [node name="Bridge" parent="." instance=ExtResource( 10 )]
 position = Vector2( 480, 136 )
+
+[node name="controls" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.294118 )
+position = Vector2( 84.2915, 169.906 )
+scale = Vector2( 0.778163, 0.778163 )
+texture = ExtResource( 16 )
+script = ExtResource( 17 )
