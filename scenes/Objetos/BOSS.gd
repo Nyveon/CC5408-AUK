@@ -11,10 +11,9 @@ var state = 0
 var player_name = "Felipe"
 var zz = "Zariel"
 var dialogue = [
-[	"dialogo derrota",  zz],
-[	"dialogo derrota 2", zz], 
-[	"dialogo derrota 3", zz],
-[	"wena", player_name]
+[	"Pucha la cuestión...",  zz],
+[	". . .", player_name], 
+[	":(", zz]
 ]
 
 var GRAVITY = 26 #antes era 20
