@@ -4,7 +4,7 @@
 [ext_resource path="res://sprites/reading.png" type="Texture" id=2]
 [ext_resource path="res://scripts/InitialCutscene.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Objetos/PaperWin.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/FadeOut.gd" type="Script" id=5]
+[ext_resource path="res://scenes/UI/FadeOut.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fonts/steamwreck/new_dynamicfont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://scripts/Title.gd" type="Script" id=7]
 [ext_resource path="res://sprites/interiorcasa.png" type="Texture" id=8]
@@ -245,13 +245,7 @@ visible = false
 position = Vector2( 201.065, 117.794 )
 texture = ExtResource( 11 )
 
-[node name="FadeOut" type="Polygon2D" parent="."]
-modulate = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( -3.34838, 6.93477, 402.976, 6.93477, 404.866, 255.769, -4.60831, 254.509 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="FadeOut" parent="." instance=ExtResource( 5 )]
 
 [node name="Title" type="RichTextLabel" parent="."]
 margin_left = 11.644

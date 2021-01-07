@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/FadeOut.gd" type="Script" id=1]
+
+[node name="FadeOut" type="Polygon2D"]
+modulate = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -3.34838, 6.93477, 402.976, 6.93477, 404.866, 255.769, -4.60831, 254.509 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}

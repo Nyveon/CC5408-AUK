@@ -6,4 +6,4 @@ func _ready():
 
 # Comunicarle el valor del tiempo a la barra de tiempo
 func _set_time(value):
-	$CanvasLayer/ProgressBar.value = value
+		$CanvasLayer/ProgressBar.value = value
