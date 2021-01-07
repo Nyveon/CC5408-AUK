@@ -7,6 +7,7 @@ extends Control
 
 var credits = [
 	"Autoría de ChronoIndex:\nAuk Producciones\nFCFM Uchile\nCC5408-1 - Primavera 2020",
+	"Integrantes:\nMatías Martínez\nEric P. Kirchgessner.\nAriel Suil A.",
 	"Agradecemos a los propietarios\nde los siguientes assets utilizados:",
 	"SanctumPixel\nFire Column Pixel Art Effect",
 	"LuizMelo\nMedieval Warrior Pack 2",
