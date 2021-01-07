@@ -1,11 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Credits.gd" type="Script" id=1]
-[ext_resource path="res://fonts/Retro Gaming.ttf" type="DynamicFontData" id=2]
-
-[sub_resource type="DynamicFont" id=2]
-size = 10
-font_data = ExtResource( 2 )
+[ext_resource path="res://fonts/steamwreck/new_dynamicfont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://sprites/bg.png" type="Texture" id=3]
+[ext_resource path="res://sprites/logo.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fade"
@@ -46,11 +44,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 192, 120 )
+scale = Vector2( 0.674387, 0.674387 )
+texture = ExtResource( 3 )
+
+[node name="logo" type="Sprite" parent="."]
+position = Vector2( 104, 56 )
+scale = Vector2( 0.134444, 0.134444 )
+texture = ExtResource( 4 )
+
 [node name="Text" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 2 )
+margin_top = 48.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 2 )
 text = "HELLO"
 align = 1
 valign = 1

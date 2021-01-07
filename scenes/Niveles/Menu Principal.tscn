@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprites/logo.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Menu Principal.gd" type="Script" id=2]
 [ext_resource path="res://fonts/steamwreck/Steamwreck.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://sprites/steamworld.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.411765, 0.227451, 1 )
@@ -27,6 +28,11 @@ custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="steamworld" type="Sprite" parent="Panel"]
+position = Vector2( 223.475, 120.048 )
+scale = Vector2( 0.882353, 0.882353 )
+texture = ExtResource( 4 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 anchor_left = 0.503689

@@ -32,7 +32,8 @@ func next_credit():
 		get_node("Text").set_text(credits[counter])
 		counter+=1
 	else:
-		get_tree().quit()
+		get_tree().change_scene("res://scenes/Niveles/Menu Principal.tscn")
+		#get_tree().quit()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

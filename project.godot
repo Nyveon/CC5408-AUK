@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Auk"
-run/main_scene="res://scenes/Niveles/Level3.tscn"
+run/main_scene="res://scenes/Niveles/Menu Principal.tscn"
 config/icon="res://sprites/logo.png"
 
 [autoload]
@@ -109,5 +109,4 @@ move_down={
 [rendering]
 
 quality/2d/use_pixel_snap=true
-environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
