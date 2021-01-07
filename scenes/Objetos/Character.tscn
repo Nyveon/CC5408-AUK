@@ -115,6 +115,8 @@ extents = Vector2( 8.22788, 13.1809 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 position = Vector2( 192, 120 )
+collision_layer = 21
+collision_mask = 21
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -125,7 +127,7 @@ position = Vector2( 0.0936432, -1.12372 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 21 )
 animation = "Run"
-frame = 6
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
