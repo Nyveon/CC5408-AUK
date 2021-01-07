@@ -96,10 +96,11 @@ func _physics_process(delta):
 
 func _on_BOSS_input_event(viewport, event, shape_idx):
 	if not alive:
-		if !is_instance_valid(Manager.dialogue_box):
-			if Input.is_mouse_button_pressed(1):
-				Manager.dialogue_box = load("res://scenes/Objetos/DialogueBox.tscn").instance()
-				Manager.dialogue_box.get_node("Text").dialogue = dialogue
-				Manager.dialogue_box.get_node("NameText").dialogue = dialogue
-				get_parent().add_child(Manager.dialogue_box)
-				state = 1
+		if state == 0:
+			if !is_instance_valid(Manager.dialogue_box):
+				if Input.is_mouse_button_pressed(1):
+					Manager.dialogue_box = load("res://scenes/Objetos/DialogueBox.tscn").instance()
+					Manager.dialogue_box.get_node("Text").dialogue = dialogue
+					Manager.dialogue_box.get_node("NameText").dialogue = dialogue
+					get_parent().add_child(Manager.dialogue_box)
+					state = 1
