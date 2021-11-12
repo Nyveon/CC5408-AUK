@@ -8,12 +8,12 @@ Made with:
 
 Attribution of resources:
  - SanctumPixel - Fire Column Pixel Art Effect
-	- LuizMelo - Medieval Warrior Pack 2
+ - LuizMelo - Medieval Warrior Pack 2
  - KnoblePersona - Steampunk Level Tileset Mega Pack
-	- SanctumPixel - Forest Lite Pixel Art Tileset
-	- Trixie - Stringstar Fields
-	- Vnitti - Taiga Asset Pack
-	- Ma9ici4n - Pixel Art Bird
-	- Daymarius - Retro Gaming Font
-	- Reemax - [LPC] House interior and decorations
-	- Bevouliin.com - Free Game Obstacle - Spikes
+ - SanctumPixel - Forest Lite Pixel Art Tileset
+ - Trixie - Stringstar Fields
+ - Vnitti - Taiga Asset Pack
+ - Ma9ici4n - Pixel Art Bird
+ - Daymarius - Retro Gaming Font
+ - Reemax - [LPC] House interior and decorations
+ - Bevouliin.com - Free Game Obstacle - Spikes
